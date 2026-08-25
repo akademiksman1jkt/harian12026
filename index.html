@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ujian Online Pendidikan Pancasila - Ultra Strict Security</title>
+    <title>Asesmen Harian Pendidikan Pancasila</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         /* PROTEKSI TAMPILAN & SELEKSI TEKS */
@@ -750,7 +750,7 @@
         ];
 
         if (jenisUpper === "PG" || jenisUpper.includes("PILIHAN")) {
-            html += `<p><b>Soal ${idx + 1} dari ${total} (Pilihan Ganda)</b></p>`;
+            html += `<p><b>Soal ${idx + 1} dari ${total} (TENTUKAN PERNYATAAN BERIKUT INI BENAR/SALAH)</b></p>`;
             html += `<div class="teks-soal">${s.tanya}</div>`;
             
             const jawSaved = akumulasiJawaban.pg[s.id] || "";
@@ -761,7 +761,7 @@
             });
 
         } else if (jenisUpper === "PG_KOMPLEKS") {
-            html += `<p><b>Soal ${idx + 1} dari ${total} (PILIHAN GANDA KOMPLEKS - MULTI CENTANG)</b></p>`;
+            html += `<p><b>Soal ${idx + 1} dari ${total} (PILIHAN GANDA DENGAN LEBIH DARI SATU JAWABAN)</b></p>`;
             html += `<div class="teks-soal">${s.tanya}</div>`;
             
             const jawSavedArr = akumulasiJawaban.pg_kompleks[s.id] || [];
@@ -792,7 +792,7 @@
             let jenisUpper = s.jenis;
 
             if (jenisUpper.includes("RUMPANG") || jenisUpper.includes("ISIAN")) {
-                html += `<p><b>Soal ${idx + 1} (Isian Paragraf Rumpang)</b></p>`;
+                html += `<p><b>Soal ${idx + 1} (Lengkapi pargraf berikut dengan jawaban yang tepat!)</b></p>`;
                 let teksParagraf = s.tanya || "";
                 
                 const jawSavedArr = akumulasiJawaban.rumpang[s.id] || [];
